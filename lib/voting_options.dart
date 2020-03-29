@@ -5,6 +5,7 @@ import 'package:responsive_grid/responsive_grid.dart';
 import 'package:vcr/action_button.dart';
 import 'package:vcr/appbottombar.dart';
 import 'package:vcr/contactus.dart';
+import 'package:vcr/profile.dart';
 
 class VotingOption extends StatefulWidget {
   @override
@@ -22,7 +23,8 @@ class _VotingOptionState extends State<VotingOption> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Center(
-          child: const Text('Volunteer management System'),
+          child: const Text('Vote Counter and Reporter'
+              ),
         ),
       ),
       bottomNavigationBar: AppBottomBar(),
@@ -51,12 +53,18 @@ class _VotingOptionState extends State<VotingOption> {
                         children: <Widget>[
                           IconButton(
                             iconSize: 40,
-                            icon: Icon(FontAwesomeIcons.user),
+                            icon: Icon(FontAwesomeIcons.voteYea),
                             onPressed: () {
                             },
                           ),
                           Text(
-                            'Login',
+                            'Vote for',
+                          ),
+                          Text(
+                            'General ',
+                          ),
+                          Text(
+                            'Elections ',
                           )
                         ],
                       ),
@@ -68,12 +76,12 @@ class _VotingOptionState extends State<VotingOption> {
                         children: <Widget>[
                           IconButton(
                             iconSize: 40,
-                            icon: Icon(FontAwesomeIcons.wpforms),
+                            icon: Icon(FontAwesomeIcons.chartArea),
                             onPressed: () {
                             },
                           ),
-                          Text('Volunteer'),
-                          Text('Application'),
+                          Text('State Based'),
+                          Text('Elections'),
                         ],
                       ),
                     ),
@@ -84,15 +92,50 @@ class _VotingOptionState extends State<VotingOption> {
                         children: <Widget>[
                           IconButton(
                             iconSize: 40,
-                            icon: Icon(FontAwesomeIcons.stopwatch),
+                            icon: Icon(FontAwesomeIcons.user),
                             onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => Profile()));
                             },
                           ),
-                          Text('Time Tracker')
+                          Text('Profile')
                         ],
                       ),
                     ),
                     if (isPortrait) _addGap(tileMargin),
+                    ResponsiveGridCol(
+                      xs: 4,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          IconButton(
+                            iconSize: 40,
+                            icon: Icon(FontAwesomeIcons.calendar),
+                            onPressed: () {
+                            },
+                          ),
+                          Text('Upcoming'),
+                          Text(' Elections')
+
+                        ],
+                      ),
+                    ),
+                    ResponsiveGridCol(
+                      xs: 4,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          IconButton(
+                            iconSize: 40,
+                            icon: Icon(FontAwesomeIcons.chalkboardTeacher),
+                            onPressed: () {
+                            },
+                          ),
+                          Text('My Votes')
+                        ],
+                      ),
+                    ),
                     ResponsiveGridCol(
                       xs: 4,
                       child: Column(
@@ -108,38 +151,6 @@ class _VotingOptionState extends State<VotingOption> {
                             },
                           ),
                           Text('Contact Us'),
-                        ],
-                      ),
-                    ),
-                    ResponsiveGridCol(
-                      xs: 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          IconButton(
-                            iconSize: 40,
-                            icon: Icon(FontAwesomeIcons.chalkboardTeacher),
-                            onPressed: () {
-                            },
-                          ),
-                          Text('Reports')
-                        ],
-                      ),
-                    ),
-                    ResponsiveGridCol(
-                      xs: 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          IconButton(
-                            iconSize: 40,
-                            icon: Icon(FontAwesomeIcons.calendar),
-                            onPressed: () {
-                            },
-                          ),
-                          Text('Upcoming'),
-                          Text(' Events')
-
                         ],
                       ),
                     ),
