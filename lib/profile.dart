@@ -54,6 +54,34 @@ class _Profile extends State<Profile> {
                     xs: 12,
                     child: SizedBox(
                       child: ListTile(
+                        title: Text('My UID Number'),
+                        subtitle: Text('877436677366'),
+                        leading: IconButton(
+                          icon: Icon(FontAwesomeIcons.tag),
+                          onPressed: () {},
+                        ),
+                        onTap: () {},
+                      ),
+                    ),
+                  ),
+                  ResponsiveGridCol(
+                    xs: 12,
+                    child: SizedBox(
+                      child: ListTile(
+                        title: Text('State'),
+                        subtitle: Text('Delhi'),
+                        leading: IconButton(
+                          icon: Icon(FontAwesomeIcons.placeOfWorship),
+                          onPressed: () {},
+                        ),
+                        onTap: () {},
+                      ),
+                    ),
+                  ),
+                  ResponsiveGridCol(
+                    xs: 12,
+                    child: SizedBox(
+                      child: ListTile(
                         title: Text('Email'),
                         subtitle: Text('ce.akhil@gmail.com'),
                         leading: IconButton(
@@ -116,8 +144,8 @@ class _Profile extends State<Profile> {
                     xs: 12,
                     child: SizedBox(
                       child: ListTile(
-                        title: Text('My Application'),
-                        subtitle: Text('View All Applications'),
+                        title: Text('My Votes'),
+                        subtitle: Text('View All votes'),
                         leading: IconButton(
                           icon: Icon(FontAwesomeIcons.tasks),
                           onPressed: () {
@@ -134,25 +162,7 @@ class _Profile extends State<Profile> {
                       child: Divider(),
                     ),
                   ),
-                  ResponsiveGridCol(
-                    xs: 12,
-                    child: SizedBox(
-                      child: ListTile(
-                        title: Text('Account Settings'),
-                        leading: IconButton(
-                          icon: Icon(FontAwesomeIcons.userCog),
-                          onPressed: () {},
-                        ),
-                        onTap: () {},
-                      ),
-                    ),
-                  ),
-                  ResponsiveGridCol(
-                    xs: 12,
-                    child: SizedBox(
-                      child: Divider(),
-                    ),
-                  ),
+
                   ResponsiveGridCol(
                     xs: 12,
                     child: SizedBox(
