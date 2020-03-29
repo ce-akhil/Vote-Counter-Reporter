@@ -6,6 +6,7 @@ import 'package:vcr/action_button.dart';
 import 'package:vcr/appbottombar.dart';
 import 'package:vcr/contactus.dart';
 import 'package:vcr/profile.dart';
+import 'package:vcr/upcoming_elections.dart';
 
 class VotingOption extends StatefulWidget {
   @override
@@ -113,6 +114,9 @@ class _VotingOptionState extends State<VotingOption> {
                             iconSize: 40,
                             icon: Icon(FontAwesomeIcons.calendar),
                             onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => UpcomingElections()));
                             },
                           ),
                           Text('Upcoming'),
