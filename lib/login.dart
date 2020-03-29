@@ -159,7 +159,7 @@ class LoginPage extends StatelessWidget {
                           xs: 12,
                           child: TextFormField(
                             decoration: new InputDecoration(
-                              hintText: 'Enter your OTP,sent on your rehistered number'
+                              hintText: 'Enter OTP sent on your registered number'
                               ,
                               border: const UnderlineInputBorder(),
                               filled: true,
