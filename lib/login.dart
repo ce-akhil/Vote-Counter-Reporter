@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_grid/responsive_grid.dart';
 import 'package:vcr/background_image.dart';
+import 'package:vcr/voting_options.dart';
 
 
 class LoginPage extends StatelessWidget {
@@ -183,14 +184,17 @@ class LoginPage extends StatelessWidget {
                       ResponsiveGridCol(
                         child: ListTile(
                           title: RaisedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => VotingOption()));
+                            },
                             child: Text(
                               'Log in',
                             ),
                           ),
                         ),
                       ),
-                      if (isPortrait) _addGap(tileMargin),
                       if (isPortrait) _addGap(tileMargin),
                       ResponsiveGridCol(
                         child: _divider(),
@@ -203,8 +207,9 @@ class LoginPage extends StatelessWidget {
                           children: <Widget>[
                             IconButton(
                                 iconSize: 40,
-                                icon: Icon(FontAwesomeIcons.facebook),
+                                icon: Icon(FontAwesomeIcons.idCard),
                                 onPressed: (){}),
+                            Text('Pan Card'),
                           ],
                         ),
                       ),
@@ -215,9 +220,11 @@ class LoginPage extends StatelessWidget {
                           children: <Widget>[
                             IconButton(
                               iconSize: 40,
-                              icon: Icon(FontAwesomeIcons.google),
+                              icon: Icon(FontAwesomeIcons.solidAddressCard),
                               onPressed: () {},
                             ),
+                            Text('Government '),
+                            Text('Issued ID')
                           ],
                         ),
                       ),

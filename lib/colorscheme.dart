@@ -10,7 +10,7 @@ ColorScheme colorScheme = ColorScheme(
   surface: Color(0xFF757575),
   onSurface: Color(0xFFb3e5fc),
   background: Color(0xFFEDF9FA),
-  onBackground: Color(0xFF31434F),
+  onBackground: Colors.red,
   error: Colors.red.shade900,
   onError: Color(0xFF4B415A),
   brightness: Brightness.light,
