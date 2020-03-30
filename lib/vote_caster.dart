@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_grid/responsive_grid.dart';
 import 'package:vcr/action_button.dart';
 import 'package:vcr/appbottombar.dart';
 
@@ -12,10 +11,7 @@ class VoteCaster extends StatefulWidget {
 class _VoteCasterState extends State<VoteCaster> {
   @override
   Widget build(BuildContext context) {
-    bool isPortrait = MediaQuery.of(context).orientation == Orientation.portrait
-        ? true
-        : false;
-    double tileMargin = 30;
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -109,10 +105,4 @@ class _VoteCasterState extends State<VoteCaster> {
   }
 }
 
-ResponsiveGridCol _addGap(double tileMargin) {
-  return ResponsiveGridCol(
-    child: SizedBox(
-      height: tileMargin,
-    ),
-  );
-}
+
