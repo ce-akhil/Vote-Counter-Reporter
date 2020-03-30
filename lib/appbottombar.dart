@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vcr/colorscheme.dart';
 import 'package:vcr/contactus.dart';
+import 'package:vcr/my_votes.dart';
 import 'package:vcr/profile.dart';
 import 'package:vcr/upcoming_elections.dart';
 
@@ -77,9 +78,15 @@ class _AppBottomBarState extends State<AppBottomBar> {
                       title: Text('My Votes'),
                       leading: IconButton(
                         icon: Icon(FontAwesomeIcons.chalkboardTeacher),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => MyVotes()));
+                        },
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => MyVotes()));
+                      },
                     ),
                     Divider(),
                     ListTile(
