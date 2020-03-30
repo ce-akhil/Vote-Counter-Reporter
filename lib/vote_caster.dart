@@ -45,9 +45,7 @@ class _VoteCasterState extends State<VoteCaster> {
                   subtitle: Text('Leader: Mamata Banerjee'),
                   trailing: RaisedButton(
                     child: Text('Vote'),
-                    onPressed: () {
-                      
-                    },
+                    onPressed: null
                   ),
                 ),
               ],
@@ -63,7 +61,7 @@ class _VoteCasterState extends State<VoteCaster> {
                   subtitle: Text('Leader: Jagat Prakash Nadda'),
                   trailing: RaisedButton(
                     child: Text('Vote'),
-                    onPressed: () {},
+                    onPressed: null,
                   ),
                 ),
               ],
@@ -79,7 +77,7 @@ class _VoteCasterState extends State<VoteCaster> {
                   subtitle: Text('Leader: D. Raja'),
                   trailing: RaisedButton(
                     child: Text('Vote'),
-                    onPressed: () {},
+                    onPressed: null,
                   ),
                 ),
               ],
@@ -95,7 +93,7 @@ class _VoteCasterState extends State<VoteCaster> {
                   subtitle: Text('Leader:Sonia Gandhi'),
                   trailing: RaisedButton(
                     child: Text('Vote'),
-                    onPressed: () {},
+                    onPressed: null,
                   ),
                 ),
               ],
