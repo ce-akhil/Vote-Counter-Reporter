@@ -6,6 +6,7 @@ import 'package:vcr/contactus.dart';
 import 'package:vcr/my_votes.dart';
 import 'package:vcr/profile.dart';
 import 'package:vcr/upcoming_elections.dart';
+import 'package:vcr/voting_options.dart';
 
 class AppBottomBar extends StatefulWidget {
   const AppBottomBar({Key key}) : super(key: key);
@@ -55,9 +56,15 @@ class _AppBottomBarState extends State<AppBottomBar> {
                     ListTile(
                         title: Text('Genaral Elections'),
                         leading: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) => VotingOption()));
+                            },
                             icon: Icon(FontAwesomeIcons.voteYea)),
-                        onTap: () {}),
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => VotingOption()));
+                        }),
                     ListTile(
                       title: Text('Results of Elections'),
                       leading: IconButton(
@@ -100,7 +107,12 @@ class _AppBottomBarState extends State<AppBottomBar> {
                                   builder: (context) => ContactUs()));
                         },
                       ),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ContactUs()));
+                      },
                     ),
                     Divider(),
                     ListTile(

@@ -32,142 +32,182 @@ class _VotingOptionState extends State<VotingOption> {
       bottomNavigationBar: AppBottomBar(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton:  AppActionButton(),
-      body: Stack(
+      body: Column(
         children: <Widget>[
-          SingleChildScrollView(
-              child: Container(
-                child: ResponsiveGridRow(
-                  children: [
-                    if (isPortrait) _addGap(tileMargin),
-                    ResponsiveGridCol(
-                      xs: 12,
-                      child: SizedBox(
-                        height: (isPortrait) ? 196 : 76,
-                        child:
-                        Image(image: AssetImage("assets/image/vote.png")),
-                      ),
-                    ),
-                    if (isPortrait) _addGap(tileMargin * 2),
-                    ResponsiveGridCol(
-                      xs: 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          IconButton(
-                            iconSize: 40,
-                            icon: Icon(FontAwesomeIcons.voteYea),
-                            onPressed: () {
+          Card(
+        child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.check_box_outline_blank),
+            title: Text('S.no.: 9475y38'),
+            subtitle:Text('S.no.: 9475y38'),
+            trailing: Text('S.no.: 9475y38')
+          ),
+          ListTile(
+            trailing: FlatButton.icon(
+          onPressed: null,
+          icon: Icon(Icons.pin_drop),
+          label: Text('S.no.: 9475y38')
+            ),),
+            ButtonBar(
+          children: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.share),
+              onPressed: () {
 
-                            },
-                          ),
-                          Text(
-                            'Vote for',
-                          ),
-                          Text(
-                            'General ',
-                          ),
-                          Text(
-                            'Elections ',
-                          )
-                        ],
+              },
+            ),
+            OutlineButton(
+              child: const Text('Reject'),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: Text('Reason for Rejection'),
+                      content: TextField(
+                        decoration: InputDecoration(
+                            hintText: "Reason for Rejection"),
                       ),
-                    ),
-                    ResponsiveGridCol(
-                      xs: 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          IconButton(
-                            iconSize: 40,
-                            icon: Icon(FontAwesomeIcons.chartArea),
-                            onPressed: () {
-                            },
-                          ),
-                          Text('State Based'),
-                          Text('Elections'),
-                        ],
-                      ),
-                    ),
-                    ResponsiveGridCol(
-                      xs: 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          IconButton(
-                            iconSize: 40,
-                            icon: Icon(FontAwesomeIcons.user),
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => Profile()));
-                            },
-                          ),
-                          Text('Profile')
-                        ],
-                      ),
-                    ),
-                    if (isPortrait) _addGap(tileMargin),
-                    ResponsiveGridCol(
-                      xs: 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          IconButton(
-                            iconSize: 40,
-                            icon: Icon(FontAwesomeIcons.calendar),
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => UpcomingElections()));
-                            },
-                          ),
-                          Text('Upcoming'),
-                          Text(' Elections')
+                      actions: <Widget>[
+                        new FlatButton(
+                          child: new Text('Submit'),
+                          onPressed: () {},
+                        )
+                      ],
+                    );
+                  },
+                );
+              },
+            ),
+            RaisedButton(
+              child: Icon(Icons.camera_alt),
+              onPressed: () {
 
-                        ],
-                      ),
-                    ),
-                    ResponsiveGridCol(
-                      xs: 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          IconButton(
-                            iconSize: 40,
-                            icon: Icon(FontAwesomeIcons.chalkboardTeacher),
-                            onPressed: () {
-                            },
-                          ),
-                          Text('My Votes')
-                        ],
-                      ),
-                    ),
-                    ResponsiveGridCol(
-                      xs: 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          IconButton(
-                            iconSize: 40,
-                            icon: Icon(FontAwesomeIcons.phone),
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => ContactUs()));
-                            },
-                          ),
-                          Text('Contact Us'),
-                        ],
-                      ),
-                    ),
-                    ResponsiveGridCol(
-                      child: SizedBox(
-                        height: 50,
-                      ),
-                    ),
-                  ],
+              },
+            ),
+          ],
+            ),
+        ],
+      ),
+    ),
+          Card(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                ListTile(
+                    leading: Icon(Icons.check_box_outline_blank),
+                    title: Text('S.no.: 9475y38'),
+                    subtitle:Text('S.no.: 9475y38'),
+                    trailing: Text('S.no.: 9475y38')
                 ),
-              )),
+                ListTile(
+                  trailing: FlatButton.icon(
+                      onPressed: null,
+                      icon: Icon(Icons.pin_drop),
+                      label: Text('S.no.: 9475y38')
+                  ),),
+            ButtonBar(
+          children: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.share),
+              onPressed: () {
+
+              },
+            ),
+            OutlineButton(
+              child: const Text('Reject'),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: Text('Reason for Rejection'),
+                      content: TextField(
+                        decoration: InputDecoration(
+                            hintText: "Reason for Rejection"),
+                      ),
+                      actions: <Widget>[
+                        new FlatButton(
+                          child: new Text('Submit'),
+                          onPressed: () {},
+                        )
+                      ],
+                    );
+                  },
+                );
+              },
+            ),
+            RaisedButton(
+              child: Icon(Icons.camera_alt),
+              onPressed: () {
+
+              },
+            ),
+          ],
+            ),
+              ],
+            ),
+          ),
+          Card(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                ListTile(
+                    leading: Icon(Icons.check_box_outline_blank),
+                    title: Text('S.no.: 9475y38'),
+                    subtitle:Text('S.no.: 9475y38'),
+                    trailing: Text('S.no.: 9475y38')
+                ),
+                ListTile(
+                  trailing: RaisedButton.icon(
+                      onPressed: null,
+                      icon: Icon(Icons.pin_drop),
+                      label: Text('S.no.: 9475y38')
+                  ),),
+            ButtonBar(
+          children: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.share),
+              onPressed: () {
+
+              },
+            ),
+            OutlineButton(
+              child: const Text('Reject'),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: Text('Reason for Rejection'),
+                      content: TextField(
+                        decoration: InputDecoration(
+                            hintText: "Reason for Rejection"),
+                      ),
+                      actions: <Widget>[
+                        new FlatButton(
+                          child: new Text('Submit'),
+                          onPressed: () {},
+                        )
+                      ],
+                    );
+                  },
+                );
+              },
+            ),
+            RaisedButton(
+              child: Icon(Icons.camera_alt),
+              onPressed: () {
+
+              },
+            ),
+          ],
+            ),
+              ],
+            ),
+          )
         ],
       ),
     );

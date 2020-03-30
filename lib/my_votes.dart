@@ -12,7 +12,7 @@ class _MyVotesState extends State<MyVotes> {
     return  Scaffold(
       appBar: AppBar(
         title: Text(
-          'Coming Elections',
+          'My Votes',
         ),
       ),
       body: SafeArea(
