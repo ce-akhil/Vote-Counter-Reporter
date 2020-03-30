@@ -4,6 +4,7 @@ import 'package:responsive_grid/responsive_grid.dart';
 import 'package:vcr/action_button.dart';
 import 'package:vcr/appbottombar.dart';
 import 'package:vcr/vote_caster.dart';
+import 'package:vcr/vote_stats.dart';
 
 class VotingOption extends StatefulWidget {
   @override
@@ -95,7 +96,10 @@ class _VotingOptionState extends State<VotingOption> {
                   children: <Widget>[
                     RaisedButton(
                       child: Text('Check Results'),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => VoteStats()));
+                      },
                     ),
                   ],
                 ),
@@ -108,10 +112,3 @@ class _VotingOptionState extends State<VotingOption> {
   }
 }
 
-ResponsiveGridCol _addGap(double tileMargin) {
-  return ResponsiveGridCol(
-    child: SizedBox(
-      height: tileMargin,
-    ),
-  );
-}
