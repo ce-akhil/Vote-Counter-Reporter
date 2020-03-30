@@ -1,11 +1,9 @@
-import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_grid/responsive_grid.dart';
 import 'package:vcr/background_image.dart';
 import 'package:vcr/voting_options.dart';
-
 
 class LoginPage extends StatelessWidget {
   LoginPage({Key key, this.title}) : super(key: key);
@@ -49,58 +47,57 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     Future<bool> _warnUserAboutInvalidData() async {
       return await showDialog<bool>(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: const Text('Any hesitation?'),
-            content: const Text(
-                'If you are getting any issue while filling the form we are happy to help. Feel free to contact us.'),
-            actions: <Widget>[
-              FlatButton(
-                child: Text(
-                  'YES',
-                ),
-                onPressed: () {
-                  Navigator.of(context).pop(true);
-                },
-              ),
-              FlatButton(
-                child: Text(
-                  'NO',
-                ),
-                onPressed: () {
-                  Navigator.of(context).pop(false);
-                },
-              ),
-            ],
-          );
-        },
-      ) ??
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: const Text('Any hesitation?'),
+                content: const Text(
+                    'If you are getting any issue while filling the form we are happy to help. Feel free to contact us.'),
+                actions: <Widget>[
+                  FlatButton(
+                    child: Text(
+                      'YES',
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pop(true);
+                    },
+                  ),
+                  FlatButton(
+                    child: Text(
+                      'NO',
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pop(false);
+                    },
+                  ),
+                ],
+              );
+            },
+          ) ??
           false;
     }
 
     bool isPortrait = MediaQuery.of(context).orientation == Orientation.portrait
         ? true
         : false;
-    return Scaffold(
-      drawerDragStartBehavior: DragStartBehavior.down,
-      key: _scaffoldKey,
-      appBar: AppBar(
-        title: Center(
-          child: Text(
-            'UID Login',
+    return Stack(
+      children: <Widget>[
+        BackgroundImage(),
+        Scaffold(
+          drawerDragStartBehavior: DragStartBehavior.down,
+          key: _scaffoldKey,
+          appBar: AppBar(
+            title: Center(
+              child: Text(
+                'UID Login',
+              ),
+            ),
           ),
-        ),
-      ),
-      body: Stack(
-        children: <Widget>[
-          BackgroundImage(),
-          Form(
+          body: Form(
             key: _formKey,
             onWillPop: _warnUserAboutInvalidData,
             child: Scrollbar(
@@ -110,23 +107,22 @@ class LoginPage extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: ResponsiveGridRow(
                     children: [
-                      if (isPortrait) _addGap(tileMargin),
+                      if (isPortrait) _addGap(tileMargin*5),
                       ResponsiveGridCol(
                         xs: 12,
                         child: SizedBox(
                           height: (isPortrait) ? 108 : 64,
-                          child: Image(
-                              image: AssetImage("assets/logo/cce.png")),
+                          child:
+                              Image(image: AssetImage("assets/image/vote.png")),
                         ),
                       ),
+                      if (isPortrait) _addGap(tileMargin*3),
                       ResponsiveGridCol(
                           xs: 12,
                           child: Center(
                             child: Text('Login to Vote',
-                                style: TextStyle(
-                                    fontSize: 35)),
-                          )
-                      ),
+                                style: TextStyle(fontSize: 35)),
+                          )),
                       if (isPortrait) _addGap(tileMargin * 5),
                       ResponsiveGridCol(
                           xs: 12,
@@ -135,7 +131,6 @@ class LoginPage extends StatelessWidget {
                               hintText: 'Enter your UID to login ',
                               border: const UnderlineInputBorder(),
                               filled: true,
-
                             ),
                             validator: (String value) {
                               if (value == null) {
@@ -160,8 +155,8 @@ class LoginPage extends StatelessWidget {
                           xs: 12,
                           child: TextFormField(
                             decoration: new InputDecoration(
-                              hintText: 'Enter OTP sent on your registered number'
-                              ,
+                              hintText:
+                                  'Enter OTP sent on your registered number',
                               border: const UnderlineInputBorder(),
                               filled: true,
                             ),
@@ -187,7 +182,8 @@ class LoginPage extends StatelessWidget {
                             onPressed: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => VotingOption()));
+                                  MaterialPageRoute(
+                                      builder: (context) => VotingOption()));
                             },
                             child: Text(
                               'Log in',
@@ -208,7 +204,7 @@ class LoginPage extends StatelessWidget {
                             IconButton(
                                 iconSize: 40,
                                 icon: Icon(FontAwesomeIcons.idCard),
-                                onPressed: (){}),
+                                onPressed: () {}),
                             Text('Pan Card'),
                           ],
                         ),
@@ -234,8 +230,8 @@ class LoginPage extends StatelessWidget {
               ),
             ),
           ),
-        ],
-      ),
+        )
+      ],
     );
   }
 }

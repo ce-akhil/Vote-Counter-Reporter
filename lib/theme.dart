@@ -6,7 +6,7 @@ ThemeData themeData = ThemeData(
   colorScheme: colorScheme,
   textTheme: textTheme.apply(
     bodyColor: colorScheme.primary,
-    displayColor: colorScheme.primaryVariant.withOpacity(0.8),
+    displayColor: colorScheme.primaryVariant,
   ),
   appBarTheme: AppBarTheme(
     textTheme: textTheme.apply(
@@ -14,7 +14,7 @@ ThemeData themeData = ThemeData(
       displayColor: Colors.white,
     ),
 
-    color: colorScheme.primaryVariant.withOpacity(0.8),
+    color: colorScheme.primaryVariant,
     iconTheme: IconThemeData(color: Colors.white),
     //brightness: colorScheme.brightness,
   ),
@@ -27,7 +27,10 @@ ThemeData themeData = ThemeData(
   dividerColor: colorScheme.onSurface,
   buttonColor: colorScheme.onPrimary,
   cardColor: Colors.white,
-  scaffoldBackgroundColor: colorScheme.background.withOpacity(0.2),
+  dividerTheme: DividerThemeData(
+    color: Color(0xFF01579b),
+  ),
+  scaffoldBackgroundColor: colorScheme.background.withOpacity(0.8),
   highlightColor: Colors.transparent,
   floatingActionButtonTheme: FloatingActionButtonThemeData(
     elevation: 24.0,
@@ -35,6 +38,6 @@ ThemeData themeData = ThemeData(
     foregroundColor: colorScheme.primaryVariant.withOpacity(0.8),
   ),
   cursorColor: colorScheme.primaryVariant.withOpacity(0.8),
-    backgroundColor: colorScheme.background.withOpacity(0.7)
+    backgroundColor: colorScheme.background
 
 );

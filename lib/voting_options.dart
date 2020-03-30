@@ -7,6 +7,7 @@ import 'package:vcr/appbottombar.dart';
 import 'package:vcr/contactus.dart';
 import 'package:vcr/profile.dart';
 import 'package:vcr/upcoming_elections.dart';
+import 'package:vcr/voter_detail.dart';
 
 class VotingOption extends StatefulWidget {
   @override
@@ -56,6 +57,9 @@ class _VotingOptionState extends State<VotingOption> {
                             iconSize: 40,
                             icon: Icon(FontAwesomeIcons.voteYea),
                             onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => FormView()));
                             },
                           ),
                           Text(
