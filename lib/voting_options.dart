@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:vcr/action_button.dart';
+import 'package:vcr/animation_button.dart';
 import 'package:vcr/appbottombar.dart';
 import 'package:vcr/responsive.dart';
-import 'package:vcr/upcoming_elections.dart';
 import 'package:vcr/vote_caster.dart';
 import 'package:vcr/vote_stats.dart';
 
@@ -41,7 +41,8 @@ class _VotingOptionState extends State<VotingOption> {
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Row(crossAxisAlignment: CrossAxisAlignment.start,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             'Live Elections',
@@ -64,14 +65,33 @@ class _VotingOptionState extends State<VotingOption> {
                               trailing: Text('1 April 2020')),
                           ButtonBar(
                             children: <Widget>[
-                              RaisedButton(
-                                child: Text('Vote'),
-                                onPressed: () {
+                              ButtonAnimation(
+                                initialText: 'Vote',
+                                finalText: 'submitted',
+                                iconData: Icons.check,
+                                iconSize: 32.0,
+                                buttonStyle: ButtonCustomStyle(
+                                  primaryColor: Colors.green.shade600,
+                                  secondaryColor: Colors.white,
+                                  elevation: 20.0,
+                                  initialTextStyle: TextStyle(
+                                    fontSize: 22.0,
+                                    color: Colors.white,
+                                  ),
+                                  finalTextStyle: TextStyle(
+                                    fontSize: 22.0,
+                                    color: Colors.green.shade600,
+                                  ),
+                                  borderRadius: 10.0,
+                                ),
+                                onTap: () {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) => VoteCaster()));
                                 },
+                                animationDuration:
+                                const Duration(milliseconds: 2000),
                               ),
                             ],
                           ),
@@ -138,11 +158,15 @@ class _VotingOptionState extends State<VotingOption> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Row(crossAxisAlignment: CrossAxisAlignment.start,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             'Upcoming Elections',
-                            style: Theme.of(context).textTheme.headline5,
+                            style: Theme
+                                .of(context)
+                                .textTheme
+                                .headline5,
                           ),
                         ],
                       ),
@@ -151,7 +175,7 @@ class _VotingOptionState extends State<VotingOption> {
                       children: <Widget>[
                         Container(
                           decoration: BoxDecoration(
-                            border:Border.all(
+                            border: Border.all(
                               width: 3.0,
                             ),
                           ),
@@ -162,45 +186,47 @@ class _VotingOptionState extends State<VotingOption> {
                               Stack(
                                 children: <Widget>[
                                   Column(
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                     children: <Widget>[
                                       Container(
-                                        decoration: BoxDecoration(
-                                        ),
+                                        decoration: BoxDecoration(),
                                         height: 50.0,
                                         child: ListTile(
-                                          leading: Icon(FontAwesomeIcons.hashtag),
+                                          leading:
+                                          Icon(FontAwesomeIcons.hashtag),
                                           title: Text('Upcoming Election'),
                                           trailing: Text('General Election'),
                                         ),
                                       ),
                                       SizedBox(height: 10),
                                       Container(
-                                        decoration: BoxDecoration(
-                                        ),
+                                        decoration: BoxDecoration(),
                                         height: 50.0,
                                         child: ListTile(
-                                            leading: Icon(FontAwesomeIcons.searchLocation),
+                                            leading: Icon(FontAwesomeIcons
+                                                .searchLocation),
                                             title: Text('Location'),
-                                            trailing: Text('1 April 2020')
-                                        ),
+                                            trailing: Text('1 April 2020')),
                                       ),
                                       SizedBox(height: 10),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                         children: <Widget>[
                                           Container(
-                                            decoration: BoxDecoration(
-                                            ),
+                                            decoration: BoxDecoration(),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding:
+                                              const EdgeInsets.all(8.0),
                                               child: RaisedButton(
-                                                  child: Text('Know More',
+                                                  child: Text(
+                                                    'Know More',
                                                     style: TextStyle(
                                                       color: Color(0xFF512DA8),
-                                                    ),),
-                                                  onPressed: null
-                                              ),
+                                                    ),
+                                                  ),
+                                                  onPressed: null),
                                             ),
                                           ),
                                         ],
@@ -217,7 +243,7 @@ class _VotingOptionState extends State<VotingOption> {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                            border:Border.all(
+                            border: Border.all(
                               width: 3.0,
                             ),
                           ),
@@ -228,46 +254,48 @@ class _VotingOptionState extends State<VotingOption> {
                               Stack(
                                 children: <Widget>[
                                   Column(
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                     children: <Widget>[
                                       Container(
-                                        decoration: BoxDecoration(
-                                        ),
+                                        decoration: BoxDecoration(),
                                         height: 50.0,
                                         child: ListTile(
-                                          leading: Icon(FontAwesomeIcons.hashtag),
+                                          leading:
+                                          Icon(FontAwesomeIcons.hashtag),
                                           title: Text('Upcoming Election'),
-                                          trailing: Text('Legislative Elections'),
+                                          trailing:
+                                          Text('Legislative Elections'),
                                         ),
                                       ),
                                       SizedBox(height: 10),
                                       Container(
-                                        decoration: BoxDecoration(
-                                        ),
+                                        decoration: BoxDecoration(),
                                         height: 50.0,
                                         child: ListTile(
-                                            leading: Icon(FontAwesomeIcons.searchLocation),
+                                            leading: Icon(FontAwesomeIcons
+                                                .searchLocation),
                                             title: Text('Location'),
-                                            trailing: Text('5 April 2020')
-                                        ),
+                                            trailing: Text('5 April 2020')),
                                       ),
                                       SizedBox(height: 10),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                         children: <Widget>[
-
                                           Container(
-                                            decoration: BoxDecoration(
-                                            ),
+                                            decoration: BoxDecoration(),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding:
+                                              const EdgeInsets.all(8.0),
                                               child: RaisedButton(
-                                                  child: Text('Know More',
+                                                  child: Text(
+                                                    'Know More',
                                                     style: TextStyle(
                                                       color: Color(0xFF512DA8),
-                                                    ),),
-                                                  onPressed: null
-                                              ),
+                                                    ),
+                                                  ),
+                                                  onPressed: null),
                                             ),
                                           ),
                                         ],
@@ -284,7 +312,7 @@ class _VotingOptionState extends State<VotingOption> {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                            border:Border.all(
+                            border: Border.all(
                               width: 3.0,
                             ),
                           ),
@@ -295,45 +323,47 @@ class _VotingOptionState extends State<VotingOption> {
                               Stack(
                                 children: <Widget>[
                                   Column(
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                     children: <Widget>[
                                       Container(
-                                        decoration: BoxDecoration(
-                                        ),
+                                        decoration: BoxDecoration(),
                                         height: 50.0,
                                         child: ListTile(
-                                          leading: Icon(FontAwesomeIcons.hashtag),
+                                          leading:
+                                          Icon(FontAwesomeIcons.hashtag),
                                           title: Text('Upcoming Election'),
                                           trailing: Text('Delhi Elections'),
                                         ),
                                       ),
                                       SizedBox(height: 10),
                                       Container(
-                                        decoration: BoxDecoration(
-                                        ),
+                                        decoration: BoxDecoration(),
                                         height: 50.0,
                                         child: ListTile(
-                                            leading: Icon(FontAwesomeIcons.searchLocation),
+                                            leading: Icon(FontAwesomeIcons
+                                                .searchLocation),
                                             title: Text('Location'),
-                                            trailing: Text('10 April 2020')
-                                        ),
+                                            trailing: Text('10 April 2020')),
                                       ),
                                       SizedBox(height: 10),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                         children: <Widget>[
                                           Container(
-                                            decoration: BoxDecoration(
-                                            ),
+                                            decoration: BoxDecoration(),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding:
+                                              const EdgeInsets.all(8.0),
                                               child: RaisedButton(
-                                                  child: Text('Know More',
+                                                  child: Text(
+                                                    'Know More',
                                                     style: TextStyle(
                                                       color: Color(0xFF512DA8),
-                                                    ),),
-                                                  onPressed: null
-                                              ),
+                                                    ),
+                                                  ),
+                                                  onPressed: null),
                                             ),
                                           ),
                                         ],
