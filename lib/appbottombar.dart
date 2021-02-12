@@ -50,7 +50,7 @@ class _AppBottomBarState extends State<AppBottomBar> {
                           ),
                         ),
                         accountName: Text('Akhil kumar'),
-                        accountEmail: Text('UID: 877436677366'),
+                        accountEmail: Text('UID: 8774366773668576t78'),
                       ),
                     ),
                     ListTile(
