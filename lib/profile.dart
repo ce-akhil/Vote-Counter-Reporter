@@ -16,7 +16,7 @@ class _Profile extends State<Profile> {
     bool isPortrait = MediaQuery.of(context).orientation == Orientation.portrait
         ? true
         : false;
-    double tileMargin = 30;
+    double tileMargin = 24;
     return Scaffold(
       drawerDragStartBehavior: DragStartBehavior.down,
       bottomNavigationBar: AppBottomBar(),
@@ -27,7 +27,7 @@ class _Profile extends State<Profile> {
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
-                expandedHeight: 250.0,
+                expandedHeight: 240.0,
                 floating: false,
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
@@ -35,7 +35,7 @@ class _Profile extends State<Profile> {
                     title: Text("Akhil Kumar",
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 16.0,
+                        
                         )),
                     background: Image.asset(
                       "assets/image/ak_face.jpg",
