@@ -32,7 +32,7 @@ class _Profile extends State<Profile> {
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
                     centerTitle: true,
-                    title: Text("Akhil Kumar",
+                    title: Text("Akhil ",
                         style: TextStyle(
                           color: Colors.white,
                         
@@ -54,8 +54,8 @@ class _Profile extends State<Profile> {
                     xs: 12,
                     child: SizedBox(
                       child: ListTile(
-                        title: Text('My UID Number'),
-                        subtitle: Text('877436677366'),
+                        title: Text('UID Number'),
+                        subtitle: Text('877436653678'),
                         leading: IconButton(
                           icon: Icon(FontAwesomeIcons.tag),
                           onPressed: () {},
@@ -69,7 +69,7 @@ class _Profile extends State<Profile> {
                     child: SizedBox(
                       child: ListTile(
                         title: Text('State'),
-                        subtitle: Text('Delhi'),
+                        subtitle: Text('Haryana'),
                         leading: IconButton(
                           icon: Icon(FontAwesomeIcons.placeOfWorship),
                           onPressed: () {},
@@ -97,7 +97,7 @@ class _Profile extends State<Profile> {
                     child: SizedBox(
                       child: ListTile(
                         title: Text('Contact Number'),
-                        subtitle: Text('+91 9729943982'),
+                        subtitle: Text('+91 8685829538'),
                         leading: IconButton(
                           icon: Icon(FontAwesomeIcons.mobileAlt),
                           onPressed: () {},
