@@ -26,11 +26,11 @@ class _AppBottomBarState extends State<AppBottomBar> {
           IconButton(
             icon: Icon(FontAwesomeIcons.bars),
             onPressed: () => showModalBottomSheet(
-              backgroundColor: colorScheme.background.withOpacity(0.8),
+              backgroundColor: colorScheme.background.withOpacity(0.7),
               context: context,
               builder: (BuildContext context) => Container(
                 alignment: Alignment.center,
-                height: 600,
+                height: 560,
                 child: ListView(
                   children: <Widget>[
                     GestureDetector(
@@ -43,14 +43,14 @@ class _AppBottomBarState extends State<AppBottomBar> {
                                     "assets/home/splash-background.jpg"),
                                 fit: BoxFit.cover)),
                         currentAccountPicture: GestureDetector(
-                          onTap: () {},
+                          onTap: null,
                           child: CircleAvatar(
                             backgroundImage:
                                 (AssetImage("assets/image/ak_face.jpg")),
                           ),
                         ),
-                        accountName: Text('Akhil kumar'),
-                        accountEmail: Text('UID: 8774366773668576t78'),
+                        accountName: Text('Akhil '),
+                        accountEmail: Text('UID: 8845798798579847'),
                       ),
                     ),
                     ListTile(
@@ -66,7 +66,7 @@ class _AppBottomBarState extends State<AppBottomBar> {
                               MaterialPageRoute(builder: (context) => VotingOption()));
                         }),
                     ListTile(
-                      title: Text('Results of Elections'),
+                      title: Text('Results'),
                       leading: IconButton(
                         icon: Icon(FontAwesomeIcons.chartArea),
                         onPressed: () {},
@@ -77,9 +77,9 @@ class _AppBottomBarState extends State<AppBottomBar> {
                       title: Text('Upcoming Elections'),
                       leading: IconButton(
                         icon: Icon(FontAwesomeIcons.calendar),
-                        onPressed: () {},
+                        onPressed: null,
                       ),
-                      onTap: () {},
+                      onTap: null,
                     ),
                     ListTile(
                       title: Text('My Votes'),
