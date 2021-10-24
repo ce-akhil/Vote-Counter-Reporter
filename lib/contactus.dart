@@ -15,18 +15,18 @@ class _ContactUsState extends State<ContactUs> {
 
   @override
   Widget build(BuildContext context) {
-    const centerHeight = 50.0;
+    const centerHeight = 48.0;
     bool isPortrait = MediaQuery.of(context).orientation == Orientation.portrait
         ? true
         : false;
-    double tileMargin = 30;
+    double tileMargin = 24;
 
     return Stack(
       children: <Widget>[
         Scaffold(
           appBar: AppBar(
             title: Text(
-              'Contact Us',
+              'Contact Us for help',
             ),
           ),
           bottomNavigationBar:  AppBottomBar(),
@@ -57,9 +57,9 @@ class _ContactUsState extends State<ContactUs> {
                             icon: new Icon(Icons.call),
                             onPressed: _launchPhone,
                           ),
-                          radius: 45,
+                          radius: 44,
                         ),
-                        Text('Call Us'),
+                        Text('Call Us for help'),
                       ],
                     ),
                   ),
@@ -71,11 +71,11 @@ class _ContactUsState extends State<ContactUs> {
                       children: <Widget>[
                         CircleAvatar(
                           child: IconButton(
-                            iconSize: 60.0,
+                            iconSize: 56.0,
                             icon: new Icon(Icons.mail),
                             onPressed: _launchEmail,
                           ),
-                          radius: 45,
+                          radius: 44,
                         ),
                         Text('Mail Us'),
                       ],
