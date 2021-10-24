@@ -26,30 +26,30 @@ class _AppBottomBarState extends State<AppBottomBar> {
           IconButton(
             icon: Icon(FontAwesomeIcons.bars),
             onPressed: () => showModalBottomSheet(
-              backgroundColor: colorScheme.background.withOpacity(0.7),
+              backgroundColor: colorScheme.background.withOpacity(0.8),
               context: context,
               builder: (BuildContext context) => Container(
                 alignment: Alignment.center,
-                height: 560,
+                height: 400,
                 child: ListView(
                   children: <Widget>[
                     GestureDetector(
-                      onTap: () {},
+                      onTap: null,
                       child: UserAccountsDrawerHeader(
-                        onDetailsPressed: () {},
+                        onDetailsPressed: null,
                         decoration: BoxDecoration(
                             image: DecorationImage(
                                 image: AssetImage(
                                     "assets/home/splash-background.jpg"),
                                 fit: BoxFit.cover)),
                         currentAccountPicture: GestureDetector(
-                          onTap: null,
+                          onTap: (){},
                           child: CircleAvatar(
                             backgroundImage:
                                 (AssetImage("assets/image/ak_face.jpg")),
                           ),
                         ),
-                        accountName: Text('Akhil '),
+                        accountName: Text('Akhil Kumar'),
                         accountEmail: Text('UID: 8845798798579847'),
                       ),
                     ),
@@ -66,7 +66,7 @@ class _AppBottomBarState extends State<AppBottomBar> {
                               MaterialPageRoute(builder: (context) => VotingOption()));
                         }),
                     ListTile(
-                      title: Text('Results'),
+                      title: Text('Elections Results'),
                       leading: IconButton(
                         icon: Icon(FontAwesomeIcons.chartArea),
                         onPressed: () {},
