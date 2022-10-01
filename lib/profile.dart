@@ -39,7 +39,7 @@ class _Profile extends State<Profile> {
                         )),
                     background: Image.asset(
                       "assets/image/ak_face.jpg",
-                      fit: BoxFit.cover,
+                      fit: BoxFit.complete,
                     )),
               ),
             ];
@@ -49,16 +49,16 @@ class _Profile extends State<Profile> {
               dragStartBehavior: DragStartBehavior.down,
               child: ResponsiveGridRow(
                 children: [
-                  if (isPortrait) _addGap(tileMargin * 2),
+                  if (isPortrait) _addGap(tileMargin),
                   ResponsiveGridCol(
                     xs: 12,
                     child: SizedBox(
                       child: ListTile(
                         title: Text('UID Number'),
-                        subtitle: Text('877436653678'),
+                        subtitle: Text('76458745647856'),
                         leading: IconButton(
-                          icon: Icon(FontAwesomeIcons.tag),
-                          onPressed: () {},
+                          icon: Icon(FontAwesomeIcons.person),
+                          onPressed: () {}, // add push button
                         ),
                         onTap: () {},
                       ),
@@ -69,7 +69,7 @@ class _Profile extends State<Profile> {
                     child: SizedBox(
                       child: ListTile(
                         title: Text('State'),
-                        subtitle: Text('Haryana'),
+                        subtitle: Text('Maharstra'),
                         leading: IconButton(
                           icon: Icon(FontAwesomeIcons.placeOfWorship),
                           onPressed: () {},
@@ -170,7 +170,7 @@ class _Profile extends State<Profile> {
                         title: Text('Logout'),
                         leading: IconButton(
                           icon: Icon(FontAwesomeIcons.signOutAlt),
-                          onPressed: () {},
+                          onPressed: () {}, // add functionality
                         ),
                         onTap: () {},
                       ),
