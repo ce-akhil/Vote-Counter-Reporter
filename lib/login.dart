@@ -10,21 +10,21 @@ class LoginPage extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final _formKey = GlobalKey<FormState>();
 
-  final double tileMargin = 10;
+  final double tileMargin = 30;
 
   final String title;
 
   Widget _divider() {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: EdgeInsets.symmetric(vertical: 16),
       child: Row(
         children: <Widget>[
           SizedBox(
-            width: 5,
+            width: 8,
           ),
           Expanded(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: Divider(
                 thickness: 1,
               ),
@@ -33,14 +33,14 @@ class LoginPage extends StatelessWidget {
           Text('or log in with'),
           Expanded(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: Divider(
-                thickness: 1,
+                thickness: 1.5,
               ),
             ),
           ),
           SizedBox(
-            width: 5,
+            width: 8,
           ),
         ],
       ),
@@ -54,7 +54,7 @@ class LoginPage extends StatelessWidget {
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
-                title: const Text('Any hesitation?'),
+                title: const Text('Need help?'),
                 content: const Text(
                     'If you are getting any issue while filling the form we are happy to help. Feel free to contact us.'),
                 actions: <Widget>[
@@ -156,7 +156,7 @@ class LoginPage extends StatelessWidget {
                           child: TextFormField(
                             decoration: new InputDecoration(
                               hintText:
-                                  'Enter OTP sent on your registered number',
+                                  'Enter OTP',
                               border: const UnderlineInputBorder(),
                               filled: true,
                             ),
@@ -169,7 +169,7 @@ class LoginPage extends StatelessWidget {
                               InkWell(
                                 onTap: () {},
                                 child: Text(
-                                  'Resend OTP',
+                                  'Resend',
                                 ),
                               )
                             ],
@@ -202,7 +202,7 @@ class LoginPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             IconButton(
-                                iconSize: 40,
+                                iconSize: 32,
                                 icon: Icon(FontAwesomeIcons.idCard),
                                 onPressed: () {}),
                             Text('Pan Card'),
@@ -215,7 +215,7 @@ class LoginPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             IconButton(
-                              iconSize: 40,
+                              iconSize: 32,
                               icon: Icon(FontAwesomeIcons.solidAddressCard),
                               onPressed: () {},
                             ),
